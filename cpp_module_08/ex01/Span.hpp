@@ -20,11 +20,11 @@ public:
 	int longestSpan() const;
 
 	class SpanOverflow : public std::exception {
-		const char *what() const throw;
+		const char *what() const throw();
 	};
 
 	class NotEnoughElem : public std::exception {
-		const char *what() const throw;
+		const char *what() const throw();
 	};
 };
 

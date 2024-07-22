@@ -48,7 +48,7 @@ int Span::shortestSpan() const {
 }
 
 const char *Span::NotEnoughElem::what() const throw() {
-	return "Not enough elements. Need minimum 2." << std::endl;
+	return "Not enough elements. Need minimum 2.";
 }
 
 const char *Span::SpanOverflow::what() const throw()
