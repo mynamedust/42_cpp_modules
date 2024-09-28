@@ -12,6 +12,8 @@ int main(int argc, char **argv) {
 	}
 
 	PmergeMe sorter(++argv);
+	sorter.sortData();
+	sorter.printVector();
 
 	// std::cout << "Before: " << sorter.printVector() << std::endl;
 	// if (!sorter.sortVector()) {
