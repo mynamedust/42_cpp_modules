@@ -12,21 +12,19 @@ int main(int argc, char **argv) {
 	}
 
 	PmergeMe sorter(++argv);
-	sorter.sortData();
-	sorter.printVector();
+	if (sorter.getVectorSize() == 0)
+		return 1;
 
-	// std::cout << "Before: " << sorter.printVector() << std::endl;
-	// if (!sorter.sortVector()) {
-	// 	printErrAndReturn("vector sort failed.")
-	// 	return 1;
-	// }
-	// if (!sorter.SortDeque()) {
-	// 	printErrAndReturn("deque sort failed.");
-	// 	return 1;
-	// }
-	//
-	// std::cout << "After: " << sorter.printVector() << std::endl;
-	// sorter.printLastSortTime();
+	std::cout << "Before: ";
+	sorter.printVector();
+	if (!sorter.sortData()) {
+		printErrAndReturn("sort failed.");
+		return 1;
+	}
+
+	std::cout << "After: ";
+	sorter.printDeque();
+	sorter.printSortingTime();
 
 	return 0;
 }
