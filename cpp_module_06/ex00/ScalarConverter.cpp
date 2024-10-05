@@ -214,7 +214,7 @@ literal ScalarConverter::castFromPseudof(std::string s) {
 
 	l.i = 0;
 	l.c = '\0';
-	l.f = strtof(s.c_str(), NULL);
+	l.f = atof(s.c_str());
 	l.d = static_cast<double>(l.f);
 
 	return l;
