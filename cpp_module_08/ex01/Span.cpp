@@ -22,7 +22,7 @@ Span& Span::operator=(const Span& other) {
 	return *this;
 }
 
-void Span::addNubmer(int value) {
+void Span::addNumber(int value) {
 	if (_arr.size() >= _cap)
 		throw SpanOverflow();
 	_arr.push_back(value);
