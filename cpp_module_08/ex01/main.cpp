@@ -38,9 +38,7 @@ int main() {
 
 		// Test 4: Large number of elements
 		Span sp3(10000);
-		for (int i = 0; i < 10000; ++i) {
-			sp3.addNubmer(i);
-		}
+		sp3.fill(10000);
 		std::cout << "Longest span in 10,000 elements: " << sp3.longestSpan() << std::endl; // Expected: 9999
 		std::cout << "Shortest span in 10,000 elements: " << sp3.shortestSpan() << std::endl; // Expected: 1
 

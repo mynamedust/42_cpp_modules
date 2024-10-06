@@ -47,6 +47,13 @@ int Span::shortestSpan() const {
 	return span;
 }
 
+void Span::fill(unsigned int count) {
+	if (_arr.size() + count > _cap)
+		throw FillOverflow();
+	while(count--)
+		_arr.push_back(count);
+}
+
 const char *Span::NotEnoughElem::what() const throw() {
 	return "Not enough elements. Need minimum 2.";
 }
@@ -54,6 +61,11 @@ const char *Span::NotEnoughElem::what() const throw() {
 const char *Span::SpanOverflow::what() const throw()
 {
 	return "Span already filled.";
+}
+
+const char *Span::FillOverflow::what() const throw()
+{
+	return "Too many items for fill.";
 }
 
 

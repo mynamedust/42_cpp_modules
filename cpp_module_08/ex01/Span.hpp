@@ -16,6 +16,7 @@ public:
 
 
 	void addNubmer(int value);
+	void fill(unsigned int count);
 	int shortestSpan() const;
 	int longestSpan() const;
 
@@ -24,6 +25,10 @@ public:
 	};
 
 	class NotEnoughElem : public std::exception {
+		const char *what() const throw();
+	};
+
+	class FillOverflow : public std::exception {
 		const char *what() const throw();
 	};
 };
